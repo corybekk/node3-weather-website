@@ -22,14 +22,14 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => { //index/default page is ''
     res.render('index', { //use to render a view
         title: 'index page', //since the title propertie exist in each page. we can add it to a template/partials
-        name: 'name:Cory'
+        name: 'Cory'
     }) 
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'about page',
-        name: 'name:Its me, Mario'
+        name: 'Cory'
     })
 })
 
@@ -37,7 +37,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         helpText: "this is helpful text",
         title: 'help page',
-        name: 'name:memoo memoo'
+        name: 'Cory'
     })
 })
 
@@ -82,7 +82,7 @@ app.get('/help/*', (req, res) => { //wild card to grab all non matching urls aft
     res.render('404', { //using handlebars template for error page
         title: '404',
         errorMessage: 'help article not found',
-        name: 'created by cory'
+        name: 'Cory'
     })
 })
 
@@ -90,7 +90,7 @@ app.get('*', (req, res) => { //wild card to grab all non matching urls
     res.render('404', { 
         title: '404',
         errorMessage: 'page not found',
-        name: 'cory'
+        name: 'Cory'
     
     })
 })

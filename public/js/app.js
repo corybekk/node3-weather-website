@@ -18,6 +18,7 @@ weatherForm.addEventListener('submit', (e) => {  // e for event
     fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error){
+                messageOne.textContent = ''
                 messageTwo.textContent = data.error // populate <p> tag with data
             } else {
                 messageOne.textContent = data.location
