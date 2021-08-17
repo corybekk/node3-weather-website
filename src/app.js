@@ -4,8 +4,10 @@ const hbs = require('hbs') //so we can use partials
 const forecast = require('./utils/forecast.js')
 const geocode = require('./utils/geocode.js')
 
-//define paths for express config
 const app = express()
+const port = process.env.PORT || 3000 //where we can access environment variables with process.env. if it exists urs PORT otherwise use 3000
+
+//define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public') //use path module to get access to pulic dir
 const viewsPath = path.join(__dirname, '../templates/views') 
 const partialsPath = path.join(__dirname, '../templates/partials') 
@@ -97,7 +99,7 @@ app.get('*', (req, res) => { //wild card to grab all non matching urls
 //app.com/help
 //app.com/about
 
-app.listen(3000 ,() => {
-    console.log('server is up on port 3000') //this starts up the server on a specific port. 3000 is a development port. http is port 80
+app.listen(port ,() => {
+    console.log('server is up on port ' + port) //this starts up the server on a specific port. 3000 is a development port. http is port 80
 
 })
